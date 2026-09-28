@@ -1,0 +1,59 @@
+{
+  "type": "application",
+  "title": "Call Review",
+  "version": "1.4",
+  "initialRoute": "/",
+  "routes": {
+    "/": "ui://pages/review"
+  },
+  "theme": {
+    "mode": "light",
+    "color": {
+      "primary": "#3d4f8c",
+      "onPrimary": "#ffffff",
+      "primaryContainer": "#dfe4f6",
+      "onPrimaryContainer": "#18234a",
+      "secondary": "#5d6b7a",
+      "onSecondary": "#ffffff",
+      "surface": "#ffffff",
+      "onSurface": "#151a22",
+      "surfaceVariant": "#e8ecf3",
+      "surfaceContainerHighest": "#eff2f7",
+      "onSurfaceVariant": "#69737f",
+      "outline": "#d9e0e8",
+      "outlineVariant": "#e9edf2",
+      "error": "#b3261e",
+      "onError": "#ffffff",
+      "errorContainer": "#f9dedc",
+      "onErrorContainer": "#5b1a15",
+      "warning": "#9a6206",
+      "onWarning": "#ffffff",
+      "inverseSurface": "#141a21",
+      "inverseOnSurface": "#eef2f6"
+    },
+    "spacing": {
+      "xxs": 2,
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48
+    },
+    "shape": {
+      "none": 0,
+      "extraSmall": 4,
+      "small": 8,
+      "medium": 12,
+      "large": 16,
+      "extraLarge": 28,
+      "full": 999
+    },
+    "fonts": {
+      "JetBrainsMono": {
+        "source": "asset",
+        "family": "JetBrainsMono"
+      }
+    }
+  }
+}

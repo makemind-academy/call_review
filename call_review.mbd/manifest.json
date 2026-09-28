@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifest": {
+    "id": "com.makemind.sample.call_review",
+    "name": "Call Review",
+    "version": "1.0.0",
+    "schemaVersion": "1.0.0",
+    "type": "application",
+    "entryPoint": "ui.app",
+    "description": "What a call-centre quality reviewer sees: one recording, their own transport, and the marks they leave on it. The built-in player controls are switched off and driven from the document instead.",
+    "provider": "MakeMind",
+    "license": "MIT",
+    "category": "business",
+    "tags": ["call-centre", "quality", "media", "sample"],
+    "publisher": {
+      "name": "makemind.dev",
+      "email": "dev@makemind.dev"
+    }
+  }
+}
