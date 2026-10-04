@@ -69,233 +69,113 @@
     }
   },
   "content": {
-    "type": "container",
-    "decoration": {
-      "color": "{{theme.color.surfaceContainerHighest}}"
+    "type": "mediaQuery",
+    "condition": {
+      "minWidth": 840
     },
-    "child": {
-      "type": "linear",
-      "direction": "vertical",
-      "children": [
-        {
-          "type": "container",
-          "padding": {
-            "left": 24,
-            "right": 24,
-            "top": 20,
-            "bottom": 16
-          },
-          "decoration": {
-            "color": "{{theme.color.surface}}",
-            "border": {
-              "bottom": true,
-              "color": "{{theme.color.outline}}",
-              "width": 1
-            }
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "linear",
-                "direction": "vertical",
-                "children": [
-                  {
-                    "type": "text",
-                    "content": "{{deskId}}",
-                    "style": {
-                      "fontSize": 12,
-                      "color": "{{theme.color.onSurfaceVariant}}",
-                      "letterSpacing": 2.2
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "content": "Quality review",
-                    "style": {
-                      "fontSize": 21,
-                      "fontWeight": "bold",
-                      "color": "{{theme.color.onSurface}}"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "expanded",
-                "child": {
-                  "type": "box",
-                  "height": 1
-                }
-              },
-              {
-                "type": "linear",
-                "direction": "vertical",
-                "crossAxisAlignment": "end",
-                "children": [
-                  {
-                    "type": "text",
-                    "content": "{{reviewer}}",
-                    "style": {
-                      "fontSize": 13,
-                      "color": "{{theme.color.onSurface}}"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "content": "Recordings stay on this terminal — only the marks leave it",
-                    "style": {
-                      "fontSize": 12,
-                      "color": "{{theme.color.onSurfaceVariant}}"
-                    }
-                  }
-                ]
+    "then": {
+      "type": "container",
+      "decoration": {
+        "color": "{{theme.color.surfaceContainerHighest}}"
+      },
+      "child": {
+        "type": "linear",
+        "direction": "vertical",
+        "children": [
+          {
+            "type": "container",
+            "padding": {
+              "left": 24,
+              "right": 24,
+              "top": 20,
+              "bottom": 16
+            },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "bottom": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
               }
-            ]
-          }
-        },
-        {
-          "type": "container",
-          "height": 592,
-          "padding": {
-            "all": 20
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "stretch",
-            "children": [
-              {
-                "type": "container",
-                "width": 300,
-                "padding": {
-                  "all": 16
-                },
-                "decoration": {
-                  "color": "{{theme.color.surface}}",
-                  "borderRadius": 12,
-                  "border": {
-                    "color": "{{theme.color.outline}}",
-                    "width": 1
-                  }
-                },
-                "child": {
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
                   "type": "linear",
                   "direction": "vertical",
                   "children": [
                     {
                       "type": "text",
-                      "content": "TODAY'S QUEUE",
+                      "content": "{{deskId}}",
                       "style": {
-                        "fontSize": 11,
-                        "letterSpacing": 1.8,
-                        "color": "{{theme.color.onSurfaceVariant}}"
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 2.2
                       }
                     },
                     {
-                      "type": "box",
-                      "height": 12
+                      "type": "text",
+                      "content": "Quality review",
+                      "style": {
+                        "fontSize": 21,
+                        "fontWeight": "bold",
+                        "color": "{{theme.color.onSurface}}"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "expanded",
+                  "child": {
+                    "type": "box",
+                    "height": 1
+                  }
+                },
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "crossAxisAlignment": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "content": "{{reviewer}}",
+                      "style": {
+                        "fontSize": 13,
+                        "color": "{{theme.color.onSurface}}"
+                      }
                     },
                     {
-                      "type": "list",
-                      "items": "{{queue}}",
-                      "shrinkWrap": true,
-                      "itemSpacing": 2,
-                      "emptyMessage": "Queue empty",
-                      "itemTemplate": {
-                        "type": "container",
-                        "padding": {
-                          "top": 8,
-                          "bottom": 8,
-                          "left": 8,
-                          "right": 8
-                        },
-                        "decoration": {
-                          "borderRadius": 8
-                        },
-                        "child": {
-                          "type": "linear",
-                          "direction": "horizontal",
-                          "crossAxisAlignment": "center",
-                          "children": [
-                            {
-                              "type": "text",
-                              "content": "{{item.no}}",
-                              "style": {
-                                "fontSize": 14,
-                                "fontFamily": "JetBrainsMono",
-                                "color": "{{theme.color.onSurface}}"
-                              }
-                            },
-                            {
-                              "type": "box",
-                              "width": 10
-                            },
-                            {
-                              "type": "expanded",
-                              "child": {
-                                "type": "text",
-                                "content": "{{item.agent}}",
-                                "style": {
-                                  "fontSize": 13,
-                                  "color": "{{theme.color.onSurfaceVariant}}"
-                                }
-                              }
-                            },
-                            {
-                              "type": "text",
-                              "content": "{{item.len}}",
-                              "style": {
-                                "fontSize": 13,
-                                "fontFamily": "JetBrainsMono",
-                                "color": "{{theme.color.onSurfaceVariant}}"
-                              }
-                            },
-                            {
-                              "type": "box",
-                              "width": 10
-                            },
-                            {
-                              "type": "container",
-                              "width": 76,
-                              "padding": {
-                                "top": 3,
-                                "bottom": 3
-                              },
-                              "decoration": {
-                                "color": "{{theme.color.surfaceVariant}}",
-                                "borderRadius": 999
-                              },
-                              "child": {
-                                "type": "text",
-                                "content": "{{item.state}}",
-                                "textAlign": "center",
-                                "style": {
-                                  "fontSize": 10,
-                                  "letterSpacing": 0.8,
-                                  "color": "{{theme.color.onSurfaceVariant}}"
-                                }
-                              },
-                              "alignment": "center"
-                            }
-                          ]
-                        }
+                      "type": "text",
+                      "content": "Recordings stay on this terminal — only the marks leave it",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}"
                       }
                     }
                   ]
                 }
-              },
-              {
-                "type": "box",
-                "width": 16
-              },
-              {
-                "type": "expanded",
-                "child": {
+              ]
+            }
+          },
+          {
+            "type": "container",
+            "height": 592,
+            "padding": {
+              "all": 20
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "stretch",
+              "children": [
+                {
                   "type": "container",
+                  "width": 300,
                   "padding": {
-                    "all": 18
+                    "all": 16
                   },
                   "decoration": {
                     "color": "{{theme.color.surface}}",
@@ -310,174 +190,8 @@
                     "direction": "vertical",
                     "children": [
                       {
-                        "type": "linear",
-                        "direction": "horizontal",
-                        "crossAxisAlignment": "center",
-                        "children": [
-                          {
-                            "type": "text",
-                            "content": "{{callId}}",
-                            "style": {
-                              "fontSize": 18,
-                              "fontWeight": "bold",
-                              "fontFamily": "JetBrainsMono",
-                              "color": "{{theme.color.onSurface}}"
-                            }
-                          },
-                          {
-                            "type": "box",
-                            "width": 12
-                          },
-                          {
-                            "type": "expanded",
-                            "child": {
-                              "type": "text",
-                              "content": "{{callFrom}}",
-                              "style": {
-                                "fontSize": 13,
-                                "color": "{{theme.color.onSurfaceVariant}}"
-                              }
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "content": "{{agent}}",
-                            "style": {
-                              "fontSize": 13,
-                              "color": "{{theme.color.onSurfaceVariant}}"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "type": "box",
-                        "height": 14
-                      },
-                      {
-                        "type": "mediaPlayer",
-                        "id": "tape",
-                        "source": "bundle://assets/call-4417.wav",
-                        "mediaType": "audio",
-                        "controls": false,
-                        "waveform": true,
-                        "height": 150,
-                        "accentColor": "{{theme.color.primary}}",
-                        "onPlay": {
-                          "type": "state",
-                          "action": "set",
-                          "binding": "playing",
-                          "value": true
-                        },
-                        "onPause": {
-                          "type": "state",
-                          "action": "set",
-                          "binding": "playing",
-                          "value": false
-                        },
-                        "onEnded": [
-                          {
-                            "type": "state",
-                            "action": "set",
-                            "binding": "playing",
-                            "value": false
-                          },
-                          {
-                            "type": "state",
-                            "action": "set",
-                            "binding": "at",
-                            "value": 0
-                          }
-                        ],
-                        "onTimeUpdate": {
-                          "type": "state",
-                          "action": "set",
-                          "binding": "at",
-                          "value": "{{event.currentTime}}"
-                        }
-                      },
-                      {
-                        "type": "box",
-                        "height": 10
-                      },
-                      {
-                        "type": "slider",
-                        "min": 0,
-                        "max": 47,
-                        "activeColor": "{{theme.color.primary}}",
-                        "onChangeEnd": {
-                          "type": "media.seek",
-                          "id": "tape",
-                          "position": "{{event.value}}"
-                        },
-                        "value": "{{at}}"
-                      },
-                      {
-                        "type": "linear",
-                        "direction": "horizontal",
-                        "crossAxisAlignment": "center",
-                        "children": [
-                          {
-                            "type": "button",
-                            "label": "−15s",
-                            "variant": "outlined",
-                            "onTap": {
-                              "type": "media.seek",
-                              "id": "tape",
-                              "position": "{{max(0, at - 15)}}"
-                            }
-                          },
-                          {
-                            "type": "box",
-                            "width": 8
-                          },
-                          {
-                            "type": "button",
-                            "label": "{{playing ? 'Pause' : 'Play'}}",
-                            "variant": "elevated",
-                            "onTap": {
-                              "type": "media.toggle",
-                              "id": "tape"
-                            }
-                          },
-                          {
-                            "type": "box",
-                            "width": 8
-                          },
-                          {
-                            "type": "button",
-                            "label": "+15s",
-                            "variant": "outlined",
-                            "onTap": {
-                              "type": "media.seek",
-                              "id": "tape",
-                              "position": "{{min(47, at + 15)}}"
-                            }
-                          },
-                          {
-                            "type": "box",
-                            "width": 16
-                          },
-                          {
-                            "type": "expanded",
-                            "child": {
-                              "type": "text",
-                              "content": "{{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}} / 0:47",
-                              "style": {
-                                "fontSize": 16,
-                                "fontFamily": "JetBrainsMono",
-                                "color": "{{theme.color.onSurface}}"
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "type": "box",
-                        "height": 16
-                      },
-                      {
                         "type": "text",
-                        "content": "MARKS ON THIS CALL",
+                        "content": "TODAY'S QUEUE",
                         "style": {
                           "fontSize": 11,
                           "letterSpacing": 1.8,
@@ -486,54 +200,134 @@
                       },
                       {
                         "type": "box",
-                        "height": 8
+                        "height": 12
                       },
                       {
                         "type": "list",
-                        "items": "{{marks}}",
+                        "items": "{{queue}}",
                         "shrinkWrap": true,
-                        "itemSpacing": 6,
-                        "emptyMessage": "No marks yet",
+                        "itemSpacing": 2,
+                        "emptyMessage": "Queue empty",
                         "itemTemplate": {
+                          "type": "container",
+                          "padding": {
+                            "top": 8,
+                            "bottom": 8,
+                            "left": 8,
+                            "right": 8
+                          },
+                          "decoration": {
+                            "borderRadius": 8
+                          },
+                          "child": {
+                            "type": "linear",
+                            "direction": "horizontal",
+                            "crossAxisAlignment": "center",
+                            "children": [
+                              {
+                                "type": "text",
+                                "content": "{{item.no}}",
+                                "style": {
+                                  "fontSize": 14,
+                                  "fontFamily": "JetBrainsMono",
+                                  "color": "{{theme.color.onSurface}}"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 10
+                              },
+                              {
+                                "type": "expanded",
+                                "child": {
+                                  "type": "text",
+                                  "content": "{{item.agent}}",
+                                  "style": {
+                                    "fontSize": 13,
+                                    "color": "{{theme.color.onSurfaceVariant}}"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "text",
+                                "content": "{{item.len}}",
+                                "style": {
+                                  "fontSize": 13,
+                                  "fontFamily": "JetBrainsMono",
+                                  "color": "{{theme.color.onSurfaceVariant}}"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 10
+                              },
+                              {
+                                "type": "container",
+                                "width": 76,
+                                "padding": {
+                                  "top": 3,
+                                  "bottom": 3
+                                },
+                                "decoration": {
+                                  "color": "{{theme.color.surfaceVariant}}",
+                                  "borderRadius": 999
+                                },
+                                "child": {
+                                  "type": "text",
+                                  "content": "{{item.state}}",
+                                  "textAlign": "center",
+                                  "style": {
+                                    "fontSize": 10,
+                                    "letterSpacing": 0.8,
+                                    "color": "{{theme.color.onSurfaceVariant}}"
+                                  }
+                                },
+                                "alignment": "center"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "box",
+                  "width": 16
+                },
+                {
+                  "type": "expanded",
+                  "child": {
+                    "type": "container",
+                    "padding": {
+                      "all": 18
+                    },
+                    "decoration": {
+                      "color": "{{theme.color.surface}}",
+                      "borderRadius": 12,
+                      "border": {
+                        "color": "{{theme.color.outline}}",
+                        "width": 1
+                      }
+                    },
+                    "child": {
+                      "type": "linear",
+                      "direction": "vertical",
+                      "children": [
+                        {
                           "type": "linear",
                           "direction": "horizontal",
                           "crossAxisAlignment": "center",
                           "children": [
                             {
                               "type": "text",
-                              "content": "{{item.stamp}}",
+                              "content": "{{callId}}",
                               "style": {
-                                "fontSize": 14,
+                                "fontSize": 18,
+                                "fontWeight": "bold",
                                 "fontFamily": "JetBrainsMono",
                                 "color": "{{theme.color.onSurface}}"
                               }
-                            },
-                            {
-                              "type": "box",
-                              "width": 12
-                            },
-                            {
-                              "type": "container",
-                              "width": 66,
-                              "padding": {
-                                "top": 3,
-                                "bottom": 3
-                              },
-                              "decoration": {
-                                "color": "{{theme.color.primaryContainer}}",
-                                "borderRadius": 999
-                              },
-                              "child": {
-                                "type": "text",
-                                "content": "{{item.kind}}",
-                                "textAlign": "center",
-                                "style": {
-                                  "fontSize": 10,
-                                  "letterSpacing": 0.8,
-                                  "color": "{{theme.color.onPrimaryContainer}}"
-                                }
-                              },
-                              "alignment": "center"
                             },
                             {
                               "type": "box",
@@ -543,11 +337,446 @@
                               "type": "expanded",
                               "child": {
                                 "type": "text",
-                                "content": "{{item.note}}",
+                                "content": "{{callFrom}}",
                                 "style": {
                                   "fontSize": 13,
+                                  "color": "{{theme.color.onSurfaceVariant}}"
+                                }
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "content": "{{agent}}",
+                              "style": {
+                                "fontSize": 13,
+                                "color": "{{theme.color.onSurfaceVariant}}"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "box",
+                          "height": 14
+                        },
+                        {
+                          "type": "mediaPlayer",
+                          "id": "tape",
+                          "source": "bundle://assets/call-4417.wav",
+                          "mediaType": "audio",
+                          "controls": false,
+                          "waveform": true,
+                          "height": 150,
+                          "accentColor": "{{theme.color.primary}}",
+                          "onPlay": {
+                            "type": "state",
+                            "action": "set",
+                            "binding": "playing",
+                            "value": true
+                          },
+                          "onPause": {
+                            "type": "state",
+                            "action": "set",
+                            "binding": "playing",
+                            "value": false
+                          },
+                          "onEnded": [
+                            {
+                              "type": "state",
+                              "action": "set",
+                              "binding": "playing",
+                              "value": false
+                            },
+                            {
+                              "type": "state",
+                              "action": "set",
+                              "binding": "at",
+                              "value": 0
+                            }
+                          ],
+                          "onTimeUpdate": {
+                            "type": "state",
+                            "action": "set",
+                            "binding": "at",
+                            "value": "{{event.currentTime}}"
+                          }
+                        },
+                        {
+                          "type": "box",
+                          "height": 10
+                        },
+                        {
+                          "type": "slider",
+                          "min": 0,
+                          "max": 47,
+                          "activeColor": "{{theme.color.primary}}",
+                          "onChangeEnd": {
+                            "type": "media.seek",
+                            "id": "tape",
+                            "position": "{{event.value}}"
+                          },
+                          "value": "{{at}}"
+                        },
+                        {
+                          "type": "linear",
+                          "direction": "horizontal",
+                          "crossAxisAlignment": "center",
+                          "children": [
+                            {
+                              "type": "button",
+                              "label": "−15s",
+                              "variant": "outlined",
+                              "onTap": {
+                                "type": "media.seek",
+                                "id": "tape",
+                                "position": "{{max(0, at - 15)}}"
+                              }
+                            },
+                            {
+                              "type": "box",
+                              "width": 8
+                            },
+                            {
+                              "type": "button",
+                              "label": "{{playing ? 'Pause' : 'Play'}}",
+                              "variant": "elevated",
+                              "onTap": {
+                                "type": "media.toggle",
+                                "id": "tape"
+                              }
+                            },
+                            {
+                              "type": "box",
+                              "width": 8
+                            },
+                            {
+                              "type": "button",
+                              "label": "+15s",
+                              "variant": "outlined",
+                              "onTap": {
+                                "type": "media.seek",
+                                "id": "tape",
+                                "position": "{{min(47, at + 15)}}"
+                              }
+                            },
+                            {
+                              "type": "box",
+                              "width": 16
+                            },
+                            {
+                              "type": "expanded",
+                              "child": {
+                                "type": "text",
+                                "content": "{{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}} / 0:47",
+                                "style": {
+                                  "fontSize": 16,
+                                  "fontFamily": "JetBrainsMono",
                                   "color": "{{theme.color.onSurface}}"
                                 }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "box",
+                          "height": 16
+                        },
+                        {
+                          "type": "text",
+                          "content": "MARKS ON THIS CALL",
+                          "style": {
+                            "fontSize": 11,
+                            "letterSpacing": 1.8,
+                            "color": "{{theme.color.onSurfaceVariant}}"
+                          }
+                        },
+                        {
+                          "type": "box",
+                          "height": 8
+                        },
+                        {
+                          "type": "list",
+                          "items": "{{marks}}",
+                          "shrinkWrap": true,
+                          "itemSpacing": 6,
+                          "emptyMessage": "No marks yet",
+                          "itemTemplate": {
+                            "type": "linear",
+                            "direction": "horizontal",
+                            "crossAxisAlignment": "center",
+                            "children": [
+                              {
+                                "type": "text",
+                                "content": "{{item.stamp}}",
+                                "style": {
+                                  "fontSize": 14,
+                                  "fontFamily": "JetBrainsMono",
+                                  "color": "{{theme.color.onSurface}}"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 12
+                              },
+                              {
+                                "type": "container",
+                                "width": 66,
+                                "padding": {
+                                  "top": 3,
+                                  "bottom": 3
+                                },
+                                "decoration": {
+                                  "color": "{{theme.color.primaryContainer}}",
+                                  "borderRadius": 999
+                                },
+                                "child": {
+                                  "type": "text",
+                                  "content": "{{item.kind}}",
+                                  "textAlign": "center",
+                                  "style": {
+                                    "fontSize": 10,
+                                    "letterSpacing": 0.8,
+                                    "color": "{{theme.color.onPrimaryContainer}}"
+                                  }
+                                },
+                                "alignment": "center"
+                              },
+                              {
+                                "type": "box",
+                                "width": 12
+                              },
+                              {
+                                "type": "expanded",
+                                "child": {
+                                  "type": "text",
+                                  "content": "{{item.note}}",
+                                  "style": {
+                                    "fontSize": 13,
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "box",
+                  "width": 16
+                },
+                {
+                  "type": "container",
+                  "width": 260,
+                  "child": {
+                    "type": "linear",
+                    "direction": "vertical",
+                    "children": [
+                      {
+                        "type": "container",
+                        "padding": {
+                          "all": 16
+                        },
+                        "decoration": {
+                          "color": "{{theme.color.surface}}",
+                          "borderRadius": 12,
+                          "border": {
+                            "color": "{{theme.color.outline}}",
+                            "width": 1
+                          }
+                        },
+                        "child": {
+                          "type": "linear",
+                          "direction": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "content": "TODAY",
+                              "style": {
+                                "fontSize": 11,
+                                "letterSpacing": 1.8,
+                                "color": "{{theme.color.onSurfaceVariant}}"
+                              }
+                            },
+                            {
+                              "type": "box",
+                              "height": 12
+                            },
+                            {
+                              "type": "linear",
+                              "direction": "horizontal",
+                              "children": [
+                                {
+                                  "type": "expanded",
+                                  "child": {
+                                    "type": "text",
+                                    "content": "Reviewed",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "color": "{{theme.color.onSurfaceVariant}}"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "text",
+                                  "content": "{{reviewedToday}}",
+                                  "style": {
+                                    "fontSize": 15,
+                                    "fontFamily": "JetBrainsMono",
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "box",
+                              "height": 8
+                            },
+                            {
+                              "type": "linear",
+                              "direction": "horizontal",
+                              "children": [
+                                {
+                                  "type": "expanded",
+                                  "child": {
+                                    "type": "text",
+                                    "content": "Flagged",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "color": "{{theme.color.onSurfaceVariant}}"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "text",
+                                  "content": "{{flaggedToday}}",
+                                  "style": {
+                                    "fontSize": 15,
+                                    "fontFamily": "JetBrainsMono",
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "box",
+                              "height": 8
+                            },
+                            {
+                              "type": "linear",
+                              "direction": "horizontal",
+                              "children": [
+                                {
+                                  "type": "expanded",
+                                  "child": {
+                                    "type": "text",
+                                    "content": "Avg handle",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "color": "{{theme.color.onSurfaceVariant}}"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "text",
+                                  "content": "{{avgHandle}}",
+                                  "style": {
+                                    "fontSize": 15,
+                                    "fontFamily": "JetBrainsMono",
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "box",
+                              "height": 8
+                            },
+                            {
+                              "type": "linear",
+                              "direction": "horizontal",
+                              "children": [
+                                {
+                                  "type": "expanded",
+                                  "child": {
+                                    "type": "text",
+                                    "content": "Score",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "color": "{{theme.color.onSurfaceVariant}}"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "text",
+                                  "content": "{{scoreToday}}",
+                                  "style": {
+                                    "fontSize": 15,
+                                    "fontFamily": "JetBrainsMono",
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "box",
+                        "height": 16
+                      },
+                      {
+                        "type": "container",
+                        "padding": {
+                          "all": 16
+                        },
+                        "decoration": {
+                          "color": "{{theme.color.surface}}",
+                          "borderRadius": 12,
+                          "border": {
+                            "color": "{{theme.color.outline}}",
+                            "width": 1
+                          }
+                        },
+                        "child": {
+                          "type": "linear",
+                          "direction": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "content": "SAME CALL · MP3 COPY",
+                              "style": {
+                                "fontSize": 11,
+                                "letterSpacing": 1.8,
+                                "color": "{{theme.color.onSurfaceVariant}}"
+                              }
+                            },
+                            {
+                              "type": "box",
+                              "height": 10
+                            },
+                            {
+                              "type": "mediaPlayer",
+                              "id": "mp3copy",
+                              "source": "bundle://assets/call-4418.mp3",
+                              "mediaType": "audio",
+                              "controls": false,
+                              "waveform": true,
+                              "height": 170,
+                              "accentColor": "{{theme.color.secondary}}"
+                            },
+                            {
+                              "type": "box",
+                              "height": 10
+                            },
+                            {
+                              "type": "button",
+                              "label": "Play copy",
+                              "variant": "outlined",
+                              "onTap": {
+                                "type": "media.toggle",
+                                "id": "mp3copy"
                               }
                             }
                           ]
@@ -556,18 +785,546 @@
                     ]
                   }
                 }
-              },
-              {
-                "type": "box",
-                "width": 16
-              },
-              {
-                "type": "container",
-                "width": 260,
-                "child": {
+              ]
+            }
+          },
+          {
+            "type": "container",
+            "padding": {
+              "left": 24,
+              "right": 24,
+              "top": 14,
+              "bottom": 16
+            },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "top": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
+              }
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "expanded",
+                  "child": {
+                    "type": "text",
+                    "content": "A mark is timestamped where the tape is, not where the reviewer remembers it being.",
+                    "style": {
+                      "fontSize": 13,
+                      "color": "{{theme.color.onSurfaceVariant}}"
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "label": "Mark {{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}} — dead air",
+                  "variant": "elevated",
+                  "onTap": [
+                    {
+                      "type": "state",
+                      "action": "append",
+                      "binding": "marks",
+                      "value": {
+                        "stamp": "{{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}}",
+                        "kind": "DEAD AIR",
+                        "note": "Line open with no speech"
+                      }
+                    },
+                    {
+                      "type": "sound.play",
+                      "source": "bundle://assets/mark.wav",
+                      "volume": 0.7
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "else": {
+      "type": "container",
+      "decoration": {
+        "color": "{{theme.color.surfaceContainerHighest}}"
+      },
+      "child": {
+        "type": "linear",
+        "direction": "vertical",
+        "children": [
+          {
+            "type": "container",
+            "padding": {
+              "left": 16,
+              "right": 16,
+              "top": 16,
+              "bottom": 12
+            },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "bottom": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
+              }
+            },
+            "child": {
+              "type": "linear",
+              "direction": "vertical",
+              "spacing": 8,
+              "children": [
+                {
                   "type": "linear",
                   "direction": "vertical",
                   "children": [
+                    {
+                      "type": "text",
+                      "content": "{{deskId}}",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 2.2
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "Quality review",
+                      "style": {
+                        "fontSize": 21,
+                        "fontWeight": "bold",
+                        "color": "{{theme.color.onSurface}}"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "crossAxisAlignment": "start",
+                  "children": [
+                    {
+                      "type": "text",
+                      "content": "{{reviewer}}",
+                      "style": {
+                        "fontSize": 13,
+                        "color": "{{theme.color.onSurface}}"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "Recordings stay on this terminal — only the marks leave it",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "type": "expanded",
+            "child": {
+              "type": "scrollView",
+              "padding": {
+                "all": 16
+              },
+              "children": [
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "spacing": 16,
+                  "crossAxisAlignment": "stretch",
+                  "children": [
+                    {
+                      "type": "container",
+                      "padding": {
+                        "all": 18
+                      },
+                      "decoration": {
+                        "color": "{{theme.color.surface}}",
+                        "borderRadius": 12,
+                        "border": {
+                          "color": "{{theme.color.outline}}",
+                          "width": 1
+                        }
+                      },
+                      "child": {
+                        "type": "linear",
+                        "direction": "vertical",
+                        "children": [
+                          {
+                            "type": "linear",
+                            "direction": "horizontal",
+                            "crossAxisAlignment": "center",
+                            "children": [
+                              {
+                                "type": "text",
+                                "content": "{{callId}}",
+                                "style": {
+                                  "fontSize": 18,
+                                  "fontWeight": "bold",
+                                  "fontFamily": "JetBrainsMono",
+                                  "color": "{{theme.color.onSurface}}"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 12
+                              },
+                              {
+                                "type": "expanded",
+                                "child": {
+                                  "type": "text",
+                                  "content": "{{callFrom}}",
+                                  "style": {
+                                    "fontSize": 13,
+                                    "color": "{{theme.color.onSurfaceVariant}}"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "text",
+                                "content": "{{agent}}",
+                                "style": {
+                                  "fontSize": 13,
+                                  "color": "{{theme.color.onSurfaceVariant}}"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "box",
+                            "height": 14
+                          },
+                          {
+                            "type": "mediaPlayer",
+                            "id": "tape",
+                            "source": "bundle://assets/call-4417.wav",
+                            "mediaType": "audio",
+                            "controls": false,
+                            "waveform": true,
+                            "height": 150,
+                            "accentColor": "{{theme.color.primary}}",
+                            "onPlay": {
+                              "type": "state",
+                              "action": "set",
+                              "binding": "playing",
+                              "value": true
+                            },
+                            "onPause": {
+                              "type": "state",
+                              "action": "set",
+                              "binding": "playing",
+                              "value": false
+                            },
+                            "onEnded": [
+                              {
+                                "type": "state",
+                                "action": "set",
+                                "binding": "playing",
+                                "value": false
+                              },
+                              {
+                                "type": "state",
+                                "action": "set",
+                                "binding": "at",
+                                "value": 0
+                              }
+                            ],
+                            "onTimeUpdate": {
+                              "type": "state",
+                              "action": "set",
+                              "binding": "at",
+                              "value": "{{event.currentTime}}"
+                            }
+                          },
+                          {
+                            "type": "box",
+                            "height": 10
+                          },
+                          {
+                            "type": "slider",
+                            "min": 0,
+                            "max": 47,
+                            "activeColor": "{{theme.color.primary}}",
+                            "onChangeEnd": {
+                              "type": "media.seek",
+                              "id": "tape",
+                              "position": "{{event.value}}"
+                            },
+                            "value": "{{at}}"
+                          },
+                          {
+                            "type": "linear",
+                            "direction": "horizontal",
+                            "crossAxisAlignment": "center",
+                            "children": [
+                              {
+                                "type": "button",
+                                "label": "−15s",
+                                "variant": "outlined",
+                                "onTap": {
+                                  "type": "media.seek",
+                                  "id": "tape",
+                                  "position": "{{max(0, at - 15)}}"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 8
+                              },
+                              {
+                                "type": "button",
+                                "label": "{{playing ? 'Pause' : 'Play'}}",
+                                "variant": "elevated",
+                                "onTap": {
+                                  "type": "media.toggle",
+                                  "id": "tape"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 8
+                              },
+                              {
+                                "type": "button",
+                                "label": "+15s",
+                                "variant": "outlined",
+                                "onTap": {
+                                  "type": "media.seek",
+                                  "id": "tape",
+                                  "position": "{{min(47, at + 15)}}"
+                                }
+                              },
+                              {
+                                "type": "box",
+                                "width": 16
+                              },
+                              {
+                                "type": "expanded",
+                                "child": {
+                                  "type": "text",
+                                  "content": "{{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}} / 0:47",
+                                  "style": {
+                                    "fontSize": 16,
+                                    "fontFamily": "JetBrainsMono",
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "box",
+                            "height": 16
+                          },
+                          {
+                            "type": "text",
+                            "content": "MARKS ON THIS CALL",
+                            "style": {
+                              "fontSize": 11,
+                              "letterSpacing": 1.8,
+                              "color": "{{theme.color.onSurfaceVariant}}"
+                            }
+                          },
+                          {
+                            "type": "box",
+                            "height": 8
+                          },
+                          {
+                            "type": "list",
+                            "items": "{{marks}}",
+                            "shrinkWrap": true,
+                            "itemSpacing": 6,
+                            "emptyMessage": "No marks yet",
+                            "itemTemplate": {
+                              "type": "linear",
+                              "direction": "horizontal",
+                              "crossAxisAlignment": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "content": "{{item.stamp}}",
+                                  "style": {
+                                    "fontSize": 14,
+                                    "fontFamily": "JetBrainsMono",
+                                    "color": "{{theme.color.onSurface}}"
+                                  }
+                                },
+                                {
+                                  "type": "box",
+                                  "width": 12
+                                },
+                                {
+                                  "type": "container",
+                                  "width": 66,
+                                  "padding": {
+                                    "top": 3,
+                                    "bottom": 3
+                                  },
+                                  "decoration": {
+                                    "color": "{{theme.color.primaryContainer}}",
+                                    "borderRadius": 999
+                                  },
+                                  "child": {
+                                    "type": "text",
+                                    "content": "{{item.kind}}",
+                                    "textAlign": "center",
+                                    "style": {
+                                      "fontSize": 10,
+                                      "letterSpacing": 0.8,
+                                      "color": "{{theme.color.onPrimaryContainer}}"
+                                    }
+                                  },
+                                  "alignment": "center"
+                                },
+                                {
+                                  "type": "box",
+                                  "width": 12
+                                },
+                                {
+                                  "type": "expanded",
+                                  "child": {
+                                    "type": "text",
+                                    "content": "{{item.note}}",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "color": "{{theme.color.onSurface}}"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "container",
+                      "padding": {
+                        "all": 16
+                      },
+                      "decoration": {
+                        "color": "{{theme.color.surface}}",
+                        "borderRadius": 12,
+                        "border": {
+                          "color": "{{theme.color.outline}}",
+                          "width": 1
+                        }
+                      },
+                      "child": {
+                        "type": "linear",
+                        "direction": "vertical",
+                        "children": [
+                          {
+                            "type": "text",
+                            "content": "TODAY'S QUEUE",
+                            "style": {
+                              "fontSize": 11,
+                              "letterSpacing": 1.8,
+                              "color": "{{theme.color.onSurfaceVariant}}"
+                            }
+                          },
+                          {
+                            "type": "box",
+                            "height": 12
+                          },
+                          {
+                            "type": "list",
+                            "items": "{{queue}}",
+                            "shrinkWrap": true,
+                            "itemSpacing": 2,
+                            "emptyMessage": "Queue empty",
+                            "itemTemplate": {
+                              "type": "container",
+                              "padding": {
+                                "top": 8,
+                                "bottom": 8,
+                                "left": 8,
+                                "right": 8
+                              },
+                              "decoration": {
+                                "borderRadius": 8
+                              },
+                              "child": {
+                                "type": "linear",
+                                "direction": "horizontal",
+                                "crossAxisAlignment": "center",
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "content": "{{item.no}}",
+                                    "style": {
+                                      "fontSize": 14,
+                                      "fontFamily": "JetBrainsMono",
+                                      "color": "{{theme.color.onSurface}}"
+                                    }
+                                  },
+                                  {
+                                    "type": "box",
+                                    "width": 10
+                                  },
+                                  {
+                                    "type": "expanded",
+                                    "child": {
+                                      "type": "text",
+                                      "content": "{{item.agent}}",
+                                      "style": {
+                                        "fontSize": 13,
+                                        "color": "{{theme.color.onSurfaceVariant}}"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "text",
+                                    "content": "{{item.len}}",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "fontFamily": "JetBrainsMono",
+                                      "color": "{{theme.color.onSurfaceVariant}}"
+                                    }
+                                  },
+                                  {
+                                    "type": "box",
+                                    "width": 10
+                                  },
+                                  {
+                                    "type": "container",
+                                    "width": 76,
+                                    "padding": {
+                                      "top": 3,
+                                      "bottom": 3
+                                    },
+                                    "decoration": {
+                                      "color": "{{theme.color.surfaceVariant}}",
+                                      "borderRadius": 999
+                                    },
+                                    "child": {
+                                      "type": "text",
+                                      "content": "{{item.state}}",
+                                      "textAlign": "center",
+                                      "style": {
+                                        "fontSize": 10,
+                                        "letterSpacing": 0.8,
+                                        "color": "{{theme.color.onSurfaceVariant}}"
+                                      }
+                                    },
+                                    "alignment": "center"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
                     {
                       "type": "container",
                       "padding": {
@@ -718,10 +1475,6 @@
                       }
                     },
                     {
-                      "type": "box",
-                      "height": 16
-                    },
-                    {
                       "type": "container",
                       "padding": {
                         "all": 16
@@ -779,68 +1532,69 @@
                     }
                   ]
                 }
-              }
-            ]
-          }
-        },
-        {
-          "type": "container",
-          "padding": {
-            "left": 24,
-            "right": 24,
-            "top": 14,
-            "bottom": 16
-          },
-          "decoration": {
-            "color": "{{theme.color.surface}}",
-            "border": {
-              "top": true,
-              "color": "{{theme.color.outline}}",
-              "width": 1
+              ]
             }
           },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "expanded",
-                "child": {
-                  "type": "text",
-                  "content": "A mark is timestamped where the tape is, not where the reviewer remembers it being.",
-                  "style": {
-                    "fontSize": 13,
-                    "color": "{{theme.color.onSurfaceVariant}}"
-                  }
-                }
-              },
-              {
-                "type": "button",
-                "label": "Mark {{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}} — dead air",
-                "variant": "elevated",
-                "onTap": [
-                  {
-                    "type": "state",
-                    "action": "append",
-                    "binding": "marks",
-                    "value": {
-                      "stamp": "{{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}}",
-                      "kind": "DEAD AIR",
-                      "note": "Line open with no speech"
-                    }
-                  },
-                  {
-                    "type": "sound.play",
-                    "source": "bundle://assets/mark.wav",
-                    "volume": 0.7
-                  }
-                ]
+          {
+            "type": "container",
+            "padding": {
+              "left": 16,
+              "right": 16,
+              "top": 10,
+              "bottom": 12
+            },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "top": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
               }
-            ]
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "expanded",
+                  "child": {
+                    "type": "text",
+                    "content": "A mark is timestamped where the tape is, not where the reviewer remembers it being.",
+                    "style": {
+                      "fontSize": 13,
+                      "color": "{{theme.color.onSurfaceVariant}}"
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "label": "Mark {{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}} — dead air",
+                  "variant": "elevated",
+                  "onTap": [
+                    {
+                      "type": "state",
+                      "action": "append",
+                      "binding": "marks",
+                      "value": {
+                        "stamp": "{{floor(at / 60)}}:{{floor(at % 60) < 10 ? '0' : ''}}{{floor(at % 60)}}",
+                        "kind": "DEAD AIR",
+                        "note": "Line open with no speech"
+                      }
+                    },
+                    {
+                      "type": "sound.play",
+                      "source": "bundle://assets/mark.wav",
+                      "volume": 0.7
+                    }
+                  ]
+                }
+              ]
+            }
           }
-        }
-      ]
+        ],
+        "crossAxisAlignment": "stretch"
+      }
     }
   }
 }
